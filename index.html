@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareEco D2R | Direct-to-Retailer for Brands & Manufacturers</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Pro/Free Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+       /* tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#030712',
+                            900: '#0B132B',
+                            800: '#111C3A',
+                            700: '#1C2A4E',
+                        },
+                        brand: {
+                            400: '#38BDF8',
+                            500: '#0284C7',
+                            600: '#0369A1',
+                            700: '#075985',
+                        },
+                        emerald: {
+                            500: '#10B981',
+                            600: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }*/
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#F0F9FF',
+                            100: '#E0F2FE',
+                            500: '#0284C7',
+                            600: '#0369A1',
+                            700: '#075985',
+                            900: '#0C4A6E',
+                        },
+                        teal: {
+                            50: '#F0FDFA',
+                            500: '#14B8A6',
+                            600: '#0D9488',
+                            700: '#0F766E',
+                        },
+                        amber: {
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        },
+                        slate: {
+                            850: '#1E293B',
+                            900: '#0F172A',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; color: #0F172A; }
+        
+        /* Custom smooth scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+        /*body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+        }
+        .dark-card {
+            background: rgba(17, 28, 58, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0284C7 0%, #10B981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }*/
+        /* Custom scrollbars */
+        /*::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B132B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1C2A4E;
+            border-radius: 4px;
+        }*/
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-12 h-12 rounded-lg text-white flex items-center justify-center font-black text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <img src="careeco_logo.gif" alt="Logo" class="h-11 w-auto object-contain align-middle">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2">
+                        CareEco
+                    </span>
+                    <span class="text-[10px] tracking-wider text-slate-500 uppercase font-medium whitespace-nowrap block w-full">Direct-to-Retailer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#value-prop" class="hover:text-brand-600 transition-colors">Strategic Advantage</a>
+                <a href="#architecture" class="hover:text-brand-600 transition-colors">D2R vs Legacy</a>
+                <a href="#commercials" class="hover:text-brand-600 transition-colors">Commercial Model</a>
+                <a href="#coverage" class="hover:text-brand-600 transition-colors">Delhi-NCR Network</a>
+                <a href="#onboarding" class="hover:text-brand-600 transition-colors">Integration Pipeline</a>
+            </nav>
+
+            <!-- Actions: Portal Login + Audit CTA -->
+            <div class="hidden sm:flex items-center gap-4">
+                <button onclick="openLoginModal()" class="text-slate-700 hover:text-brand-600 font-semibold text-sm px-4 py-2.5 rounded-lg border border-slate-300 hover:border-brand-500 bg-white shadow-sm transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-brand-600 text-xs"></i>
+                    <span>Client Portal Login</span>
+                </button>
+                <a href="#inquiry" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm px-5 py-2.5 rounded-lg shadow-md shadow-brand-600/20 transition-all flex items-center gap-2">
+                    <span>Partner Inquiry</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuToggle" class="md:hidden text-slate-700 hover:text-slate-900 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileDrawer" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4">
+            <a href="#value-prop" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Strategic Advantage</a>
+            <a href="#architecture" class="block text-slate-700 hover:text-brand-600 font-medium py-1">D2R vs Legacy</a>
+            <a href="#commercials" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Commercial Model</a>
+            <a href="#coverage" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Delhi-NCR Network</a>
+            <a href="#onboarding" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Integration Pipeline</a>
+            <div class="pt-4 border-t border-slate-100 space-y-3">
+                <button onclick="openLoginModal()" class="w-full text-center text-slate-800 font-semibold py-2.5 rounded-lg border border-slate-300 bg-slate-50">
+                    Client Portal Login
+                </button>
+                <a href="#inquiry" class="block w-full text-center bg-brand-600 text-white font-bold py-2.5 rounded-lg shadow">
+                    Partner Inquiry
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white text-slate-900 pt-16 pb-24 border-b border-slate-200 overflow-hidden">
+        <!-- Structural Background Pattern -->
+        <div class="absolute inset-0 opacity-40 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand-100 rounded-full blur-3xl pointer-events-none opacity-70"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="inline-flex items-center gap-2.5 bg-brand-50 border border-brand-200 px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-700">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-slate-600">Targeted Retail Channel Expansion:</span>
+                        <span>Delhi-NCR Territory</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-slate-900">
+                            Eliminate Middlemen Friction. Take Your Brand <span class="bg-gradient-to-r from-brand-600 via-teal-600 to-brand-700 text-transparent bg-clip-text">Direct To Retailers.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
+                        Just as Amazon revolutionized D2C e-commerce, <strong class="text-slate-900 font-semibold">CareEco empowers established manufacturers and high-growth D2C brands</strong> to bypass multi-tier distributor margins, eliminate feet-on-street sales overhead, and establish direct digital distribution across 3,000+ Delhi-NCR retail stores.
+                    </p>
+
+                    <!-- Hero Call to Actions -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                        <a href="#inquiry" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-brand-600/25 hover:scale-[1.01] active:scale-95 transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Grow by Selling in Retail</span>
+                        </a>
+                        <a href="#commercials" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-semibold text-base px-6 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator text-brand-600"></i>
+                            <span>View Commercials & Savings</span>
+                        </a>
+                    </div>
+
+                    <!-- Executive Metrics Bar -->
+                    <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-200">
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <div class="text-2xl font-extrabold text-brand-600">Instant</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Time to Retail Market</div>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <div class="text-2xl font-extrabold text-emerald-600">100%</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Scheme Pass-Through</div>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <div class="text-2xl font-extrabold text-teal-600">Zero</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Ground Field Team Overhead</div>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <div class="text-2xl font-extrabold text-slate-900">Delhi-NCR</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Active Network Region</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Architectural Graphic Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6 relative">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-diagram-project text-brand-600 text-lg"></i>
+                                <span class="font-bold text-slate-900 text-sm sm:text-base">CareEco D2R Flow Architecture</span>
+                            </div>
+                            <span class="text-[11px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full">Automated Pipeline</span>
+                        </div>
+
+                        <!-- Architecture Visual Stack -->
+                        <div class="space-y-4 text-xs font-semibold">
+                            <!-- Tier 1: Brand -->
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-base">
+                                        <i class="fa-solid fa-industry"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-slate-900 text-sm font-bold">Brand / Manufacturer</div>
+                                        <div class="text-slate-500 font-normal text-[11px]">Direct Inventory Catalog & Margin Ownership</div>
+                                    </div>
+                                </div>
+                                <span class="text-brand-700 text-[10px] uppercase tracking-wider font-mono bg-brand-50 px-2 py-1 rounded font-bold">Direct Control</span>
+                            </div>
+
+                            <!-- Connector Arrow -->
+                            <div class="flex justify-center text-slate-400 py-0.5">
+                                <i class="fa-solid fa-arrow-down-long text-brand-600 animate-bounce"></i>
+                            </div>
+
+                            <!-- Tier 2: CareEco Engine -->
+                            <div class="p-4 bg-gradient-to-r from-brand-50 via-teal-50 to-brand-50 rounded-xl border border-brand-200 text-center space-y-2">
+                                <div class="flex items-center justify-between text-slate-800">
+                                    <span class="text-brand-700 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
+                                        <i class="fa-solid fa-cubes-stacked"></i> CareEco D2R Infrastructure
+                                    </span>
+                                    <span class="text-[10px] text-slate-500">Tech & Express Logistics</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-[10px] text-slate-700 font-normal pt-1">
+                                    <div class="bg-white p-2 rounded border border-slate-200">
+                                        <i class="fa-solid fa-warehouse text-brand-600 block mb-1"></i> Micro-Hubs
+                                    </div>
+                                    <div class="bg-white p-2 rounded border border-slate-200">
+                                        <i class="fa-solid fa-mobile-screen text-teal-600 block mb-1"></i> Retailer App
+                                    </div>
+                                    <div class="bg-white p-2 rounded border border-slate-200">
+                                        <i class="fa-solid fa-truck-fast text-slate-800 block mb-1"></i> Express Fullfillment
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Connector Arrow -->
+                            <div class="flex justify-center text-slate-400 py-0.5">
+                                <i class="fa-solid fa-arrow-down-long text-teal-600"></i>
+                            </div>
+
+                            <!-- Tier 3: Retail Outlets -->
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-base">
+                                        <i class="fa-solid fa-store"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-slate-900 text-sm font-bold">Thousands of Independent Retail Stores</div>
+                                        <div class="text-slate-400 font-normal text-[11px]">Delhi-NCR General Trade (Direct Offers & Guaranteed Stock)</div>
+                                    </div>
+                                </div>
+                                <span class="text-teal-700 text-[10px] uppercase tracking-wider font-mono bg-teal-50 px-2 py-1 rounded">Instant Demand</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Advantage Section -->
+    <section id="value-prop" class="py-20 bg-slate-950 text-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-400 text-xs font-extrabold uppercase tracking-widest bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Omnichannel Retail Strategy</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Built for High-Growth D2C Brands & Established Manufacturers</h2>
+                <p class="text-slate-400 mt-3 text-base">
+                    See how CareEco eliminates layers of inefficiencies, delays, and hidden margin leakages inherent in traditional multi-tier distribution networks.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Advantage 1 -->
+                <div class="bg-navy-900/80 rounded-2xl p-8 border border-slate-800 hover:border-brand-500/50 transition-all space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/20 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Instant Speed-to-Market</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Rather than spending 6 to 12 months building regional distributor relationships city by city, list your product catalog digitally and deploy inventory to CareEco hubs for immediate order availability.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-slate-800">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Rapid SKU catalog onboarding</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Immediate retail discovery</li>
+                    </ul>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="bg-navy-900/80 rounded-2xl p-8 border border-slate-800 hover:border-emerald-500/50 transition-all space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Zero Field Sales Overhead</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Eliminate the prohibitive fixed overhead of hiring, managing, and subsidizing ground sales teams. CareEco’s tech-driven platform handles store re-orders and promotions automatically.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-slate-800">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Up to 90% reduction in sales operational cost</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Automated AI-driven reordering recommendations</li>
+                    </ul>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="bg-navy-900/80 rounded-2xl p-8 border border-slate-800 hover:border-brand-500/50 transition-all space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/20 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">100% Scheme Transparency</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Traditional multi-tier wholesalers often absorb manufacturer trade promotions. CareEco guarantees that 100% of your schemes, discounts, and trade margin offers reach retailers directly.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-slate-800">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Real-time scheme execution analytics</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Direct retailer loyalty engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architectural Matrix Section -->
+    <section id="architecture" class="py-20 bg-slate-50 text-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 text-xs font-extrabold uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Comparative Analysis</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Conventional Supply Chain vs. CareEco D2R Infrastructure</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">An executive comparison between 3-tier wholesale channels and direct technology-enabled retail distribution.</p>
+            </div>
+
+            <!-- Matrix Table -->
+            <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-2xl bg-white">
+                <table class="w-full text-left border-collapse min-w-[700px]">
+                    <thead>
+                        <tr class="bg-slate-100 border-b border-slate-200 text-slate-700 text-sm">
+                            <th class="p-5 font-bold w-1/4">Evaluation Dimension</th>
+                            <th class="p-5 font-bold w-3/8 bg-brand-50/70 text-brand-900 border-x border-brand-100">
+                                <span class="flex items-center gap-2 text-sm font-black text-brand-700">
+                                    <i class="fa-solid fa-ban text-red-600"></i>
+                                    Conventional 3-Tier Distribution
+                                </span>
+                            </th>
+                            <th class="p-5 font-bold w-3/8 bg-brand-50/70 text-brand-900 border-x border-brand-100">
+                                <span class="flex items-center gap-2 text-sm font-black text-brand-700">
+                                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                                    CareEco D2R Platform
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                        <!-- Row 1 -->
+                        <tr class="hover:bg-navy-900/50 transition-colors">
+                            <td class="p-5 font-semibold text-slate-900 bg-slate-50/50">
+                                <i class="fa-solid fa-clock text-brand-600 mr-2"></i> Time to Market
+                            </td>
+                            <td class="p-5 text-slate-400 bg-navy-950/40">
+                                <span class="font-semibold text-red-600">60 - 90 Days</span>
+                                <div class="text-xs text-slate-600 mt-1">Protracted distributor onboarding and territory assignment</div>
+                            </td>
+                            <td class="p-5 bg-navy-950/40 text-slate-200">
+                                <span class="font-bold text-emerald-700 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-brand-400"></i> Instant (24-48 Hours)
+                                </span>
+                                <div class="text-xs text-slate-600 mt-1">Catalog sync and immediate stock accessibility across Delhi-NCR</div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-navy-900/50 transition-colors">
+                            <td class="p-5 font-semibold text-slate-900 bg-slate-50/50">
+                                <i class="fa-solid fa-users-slash text-brand-600 mr-2"></i> Ground Sales Overhead
+                            </td>
+                            <td class="p-5 text-slate-400 bg-navy-950/40">
+                                <span class="font-semibold text-red-600">Heavy Capital Expenditure</span>
+                                <div class="text-xs text-slate-600 mt-1">Salaries, daily allowances, beat plans, and high attrition</div>
+                            </td>
+                            <td class="p-5 bg-navy-950/40 text-slate-200">
+                                <span class="font-bold text-emerald-700">Zero Field Force Required</span>
+                                <div class="text-xs text-slate-600 mt-1">Direct digital ordering via retailer app and platform incentives</div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-navy-900/50 transition-colors">
+                            <td class="p-5 font-semibold text-slate-900 bg-slate-50/50">
+                                <i class="fa-solid fa-percent text-brand-600 mr-2"></i> Channel Margin Leakage
+                            </td>
+                            <td class="p-5 text-slate-400 bg-navy-950/40">
+                                <span class="font-semibold text-red-600">30% to 45% Margin Loss</span>
+                                <div class="text-xs text-slate-600 mt-1">Divided across Super Stockists, C&F Agents, and Wholesalers</div>
+                            </td>
+                            <td class="p-5 bg-navy-950/40 text-slate-200">
+                                <span class="font-bold text-emerald-700">Transparent Flat Service Fee</span>
+                                <div class="text-xs text-slate-600 mt-1">Pay only for platform referral, storage, and fulfillment</div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4 -->
+                        <tr class="hover:bg-navy-900/50 transition-colors">
+                            <td class="p-5 font-semibold text-slate-900 bg-slate-50/50">
+                                <i class="fa-solid fa-bullhorn text-brand-600 mr-2"></i> Scheme & Discount Pass-Through
+                            </td>
+                            <td class="p-5 text-slate-400 bg-navy-950/40">
+                                <span class="font-semibold text-red-600">Opaque & Intercepted</span>
+                                <div class="text-xs text-slate-600 mt-1">Distributor margins absorb retailer promotional budgets</div>
+                            </td>
+                            <td class="p-5 bg-navy-950/40 text-slate-200">
+                                <span class="font-bold text-emerald-700">100% Direct Pass-Through</span>
+                                <div class="text-xs text-slate-600 mt-1">Schemes reflected transparently on retailer order invoice</div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 5 -->
+                        <tr class="hover:bg-navy-900/50 transition-colors">
+                            <td class="p-5 font-semibold text-slate-900 bg-slate-50/50">
+                                <i class="fa-solid fa-chart-line text-brand-600 mr-2"></i> Secondary Sales Analytics
+                            </td>
+                            <td class="p-5 text-slate-400 bg-navy-950/40">
+                                <span class="font-semibold text-red-600">Delayed / Offline Data</span>
+                                <div class="text-xs text-slate-600 mt-1">Monthly manual statements with zero store-level visibility</div>
+                            </td>
+                            <td class="p-5 bg-navy-950/40 text-slate-200">
+                                <span class="font-bold text-emerald-700">Real-Time Client Dashboard</span>
+                                <div class="text-xs text-slate-600 mt-1">Live order tracking, store-level off-take, and inventory intelligence</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Architecture Section -->
+    <section id="commercials" class="py-20 bg-white text-slate-900 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 text-xs font-extrabold uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Financial Transparency</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Commercial Structure</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Simple, predictable pay-as-you-grow fees. No hidden distributor margins.</p>
+            </div>
+
+            <!-- Fee Pillar Breakdown -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Referral Fee -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-brand-500 transition-all shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">1. Referral Fee</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            A platform transaction fee based on successful retailer orders delivered.
+                        </p>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm mb-4">
+                            <div class="text-xs text-slate-500 font-medium">Platform Referral Rate</div>
+                            <div class="text-3xl font-black text-brand-600 mt-1">5% - 7%</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Calculated on Gross Order Value (GMV)& transaction volume</div>
+                        </div>
+                    </div>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Includes payment processing & gateway integration</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Zero monthly fixed platform subscription fee</li>
+                    </ul>
+                </div>
+
+                <!-- Storage Fee -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-teal-500 transition-all shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">2. Storage Fee</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Flexible micro-warehousing across strategically positioned hubs in Delhi-NCR.
+                        </p>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm mb-4">
+                            <div class="text-xs text-slate-500 font-medium">Storage Cost</div>
+                            <div class="text-3xl font-black text-teal-600 mt-1">₹8 - ₹12 <span class="text-xs font-normal text-slate-500">/ cu.ft / month</span></div>
+                            <div class="text-[11px] text-slate-400 mt-1">Pay purely for space utilized</div>
+                        </div>
+                    </div>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Real-time inventory audit trail</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Automated FIFO inventory batch management</li>
+                    </ul>
+                </div>
+
+                <!-- Delivery Fee -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-brand-500 transition-all shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">3. Delivery Fee</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Optimized last-mile dispatch from fulfillment hubs to retail store counters.
+                        </p>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200shadow-sm mb-4">
+                            <div class="text-xs text-slate-500 font-medium">Fulfillment Rate</div>
+                            <div class="text-3xl font-black text-brand-600 mt-1">₹25 - ₹30 <span class="text-xs font-normal text-slate-500">/ order </span></div>
+                            <div class="text-[11px] text-slate-400 mt-1">Optimized route fleet delivery</div>
+                        </div>
+                    </div>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Proof-of-delivery</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Real-time update</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dynamic Margin Savings Simulator -->
+            <div class="bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-brand-400"></i> Financial ROI & Net Savings Calculator
+                        </h3>
+                        <p class="text-xs text-slate-300 mt-1">Simulate net profit retained when comparing legacy multi-tier distribution against CareEco D2R.</p>
+                    </div>
+                    <div class="bg-slate-800 px-4 py-2 rounded-xl border border-slate-700 text-xs text-slate-200 font-mono">
+                        Target Region: <span class="text-brand-400 font-bold">Delhi-NCR Territory</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 pt-6 items-center">
+                    <!-- Sliders Column -->
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <label class="text-slate-300">Target Monthly Retail Revenue (GMV in INR)</label>
+                                <span class="text-brand-400 font-bold font-mono" id="simGmvText">₹ 25,00,000</span>
+                            </div>
+                            <input type="range" id="simGmvRange" min="500000" max="10000000" step="250000" value="2500000" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <label class="text-slate-300">Hub Storage Allocation Required</label>
+                                <span class="text-emerald-400 font-bold font-mono" id="simSpaceText">4500 cb.ft</span>
+                            </div>
+                            <input type="range" id="simSpaceRange" min="100" max="3000" step="100" value="500" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-500">
+                        </div>
+                    </div>
+
+                    <!-- Calculated Results Box -->
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-4">
+                        <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Estimated Monthly Margin Retained</div>
+                        <div class="text-4xl font-black text-emerald-400 font-mono" id="simSavingsDisplay">₹ 4,87,500</div>
+                        <p class="text-xs text-slate-400">
+                            By eliminating distributor margins & sales force overhead, you save approximately <strong class="text-white" id="simPercentDisplay">19.5%</strong> in gross revenue.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-800 text-xs text-left">
+                            <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800">
+                                <span class="text-slate-400 block text-[10px] uppercase">CareEco Platform Fee</span>
+                                <span class="font-bold text-brand-400 font-mono" id="simCareEcoFeeText">₹ 1,37,500</span>
+                            </div>
+                            <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800">
+                                <span class="text-slate-400 block text-[10px] uppercase">Legacy Distributor Loss</span>
+                                <span class="font-bold text-red-400 font-mono" id="simLegacyLossText">₹ 6,25,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Regional Geography Footprint -->
+    <section id="coverage" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Territory Text -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="bg-brand-50 text-brand-700 text-xs font-extrabold px-3 py-1 rounded-full border border-brand-200 uppercase tracking-wider">Active Territory</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Deep Retail Distribution Footprint in <span class="text-brand-400">Delhi-NCR</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        CareEco operates strategically placed fulfillment centers in National Capital Region, ensuring timely dispatch and door-step delivery to retail counters.
+                    </p>
+
+                    <!-- Zone Metrics Grid -->
+                    <div class="grid grid-cols-2 gap-3.5 pt-2">
+                        <div class="p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                                <div class="font-bold text-slate-900 text-sm">Delhi</div>
+                            </div>
+                            <div class="text-xs text-brand-600 font-bold mt-1">1,500+ Retail Outlets</div>
+                        </div>
+
+                        <div class="p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                                <div class="font-bold text-slate-900 text-sm">Gurgaon & Faridabad</div>
+                            </div>
+                            <div class="text-xs text-brand-600 font-bold mt-1">600+ Retail Outlets</div>
+                        </div>
+
+                        <div class="p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm0">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                                <div class="font-bold text-slate-900 text-sm">Noida & Gr. Noida</div>
+                            </div>
+                            <div class="text-xs text-brand-600 font-bold mt-1">600+ Retail Outlets</div>
+                        </div>
+
+                        <div class="p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                                <div class="font-bold text-slate-900 text-sm">Ghaziabad</div>
+                            </div>
+                            <div class="text-xs text-brand-600 font-bold mt-1">300+ Retail Outlets</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Live Map Box -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100 text-xs">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-map-location-dot text-brand-600 text-base"></i>
+                                <span class="font-bold text-slate-900 text-sm">CareEco Regional Hub Architecture</span>
+                            </div>
+                            <span class="text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded font-mono border border-emerald-200">100% Independent Operating Hubs</span>
+                        </div>
+
+                        <!-- Stylized Map Component -->
+                        <div class="relative bg-slate-100 rounded-xl h-80 border border-slate-200 overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 opacity-30 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
+
+                           <!-- Gurgaon Hub Node -->
+                                <div class="absolute bottom-12 left-16 text-center">
+                                    <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs mx-auto shadow">
+                                        <i class="fa-solid fa-truck-fast"></i>
+                                    </div>
+                                    <span class="text-[10px] text-slate-800 font-bold block mt-1 bg-white px-2 py-0.5 rounded border border-slate-200">Hub for Part of Dehil, Gurgaon and Faridabad</span>
+                                </div>
+
+                             <!-- Noida Hub Node -->
+                                <div class="absolute top-12 right-20 text-center">
+                                    <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs mx-auto shadow">
+                                        <i class="fa-solid fa-truck-fast"></i>
+                                    </div>
+                                    <span class="text-[10px] text-slate-800 font-bold block mt-1 bg-white px-2 py-0.5 rounded border border-slate-200">Hub for Part of Dehil, Ghaziabad and Noida</span>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding Step Pipeline -->
+    <section id="onboarding" class="py-20 bg-slate-950 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-400 text-xs font-extrabold uppercase tracking-widest">Seamless Onboarding</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">4-Step Integration Pipeline</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Designed for zero technical friction. Transition your SKUs into Delhi-NCR retail stores within 48 hours.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 relative">
+                    <div class="text-3xl font-black text-brand-500/30 font-mono mb-4">01</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Catalog & Master Sync</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Bulk import product SKUs, MRPs, trade margins, and master promotional offers via CareEco client portal.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 relative">
+                    <div class="text-3xl font-black text-brand-500/30 font-mono mb-4">02</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Inbound Stock Arrival</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Ship primary inventory batches directly to CareEco’s independently operating hubs as per your target geographies.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 relative">
+                    <div class="text-3xl font-black text-brand-500/30 font-mono mb-4">03</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Retailer App Listing</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Your catalog along with margins and schemes becomes immediately visible to 3,000+ verified retailers on the CareEco ordering app.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 relative">
+                    <div class="text-3xl font-black text-brand-500/30 font-mono mb-4">04</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Dispatch & Automated Settlement</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        CareEco handles last-mile delivery, payment collection, and direct digital weekly settlements to brand bank accounts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutional Inquiry Form Section -->
+    <section id="inquiry" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 border border-slate-200 p-8 sm:p-12 rounded-3xl shadow-2xl">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-brand-600 text-xs font-extrabold uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Partner With Us</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-3">Expand Your Brand to Retail</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-2">Fill out your organization details to schedule a D2R channel expansion strategy session.</p>
+                </div>
+
+                <form id="brandInquiryForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Company / Brand Name -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Company / Brand Name *</label>
+                            <input type="text" required placeholder="e.g. Apex Consumer Products Ltd" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20">
+                        </div>
+
+                        <!-- Product Category -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Product Category *</label>
+                            <select required class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20">
+                                <option value="">Select Category</option>
+                                <option value="pharma">Pharmaceutical & Medicine</option>
+                                <option value="fmcg">FMCG & Packaged Foods</option>
+                                <option value="beverages">Beverages & Functional Drinks</option>
+                                <option value="otc">Health & OTC</option>
+                                <option value="personal_care">Personal Care & Wellness</option>
+                                <option value="surigcal">Surgical & Medical Equipment</option>
+                                <option value="consumergoods">Consumer Goods</option>
+                                <option value="alternative">Ayurvedic, Homeopathic or Yunani</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Contact Person -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Executive Name & Designation *</label>
+                            <input type="text" required placeholder="e.g. Rahul Sharma (VP Sales / Founder)" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20">
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Contact Mobile / Phone *</label>
+                            <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Official Email -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Corporate Email Address *</label>
+                            <input type="email" required placeholder="rahul@brand.com" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20">
+                        </div>
+
+                        <!-- Current D2C / Monthly Revenue -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Current Monthly Revenue Run Rate</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/2">
+                                <option value="sub_10L">Under ₹10 Lakhs / month</option>
+                                <option value="10L_50L">₹10 Lakhs - ₹50 Lakhs / month</option>
+                                <option value="50L_2Cr">₹50 Lakhs - ₹2 Crores / month</option>
+                                <option value="above_2Cr">Above ₹2 Crores / month</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-base py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                        <span>Submit Onboarding Request</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <!-- Form Success Box -->
+                <div id="inquirySuccess" class="hidden p-6 bg-emerald-50 border border-emerald-200 rounded-xl text-center space-y-2 mt-4">
+                    <div class="text-3xl text-emerald-600"><i class="fa-solid fa-circle-check"></i></div>
+                    <h4 class="font-bold text-white text-lg">Inquiry Successfully Registered</h4>
+                    <p class="text-xs text-slate-600">Our team will connect with your executive team within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 text-xs py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center font-bold text-sm">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                </div>
+                <span class="text-white font-bold text-sm">CareEco Direct-to-Retailer (D2R)</span>
+            </div>
+
+            <div class="text-center md:text-left text-slate-400">
+                <span>Active Operating Region: <strong>Delhi-NCR</strong> | Platform: <strong>CareEco.in</strong></span>
+            </div>
+
+            <div>
+                © 2024 CareEco.in. All Rights Reserved. Enterprise B2B Infrastructure.
+            </div>
+        </div>
+    </footer>
+
+    <!-- CLIENT DASHBOARD LOGIN MODAL -->
+    <div id="loginModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative animate-in fade-in zoom-in duration-150">
+            
+            <!-- Modal Header -->
+            <div class="p-6 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-shield-halved text-brand-600 text-xl"></i>
+                    <div>
+                        <h3 class="text-base font-bold text-slate-900">CareEco Client Gateway</h3>
+                        <p class="text-[11px] text-slate-500">Access your enterprise dashboard</p>
+                    </div>
+                </div>
+                <button onclick="closeLoginModal()" class="text-slate-400 hover:text-slate-700 text-lg p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+           
+            <!-- Login Role Tabs -->
+            <!-- <div class="grid grid-cols-2 bg-slate-100 border-b border-slate-200 text-xs font-bold text-center">
+                <button id="tabBrandBtn" onclick="switchLoginTab('brand')" class="py-3 text-brand-700 border-b-2 border-brand-600 bg-white">
+                    <i class="fa-solid fa-industry mr-1.5"></i> Brand / Manufacturer
+                </button>
+                <button id="tabRetailerBtn" onclick="switchLoginTab('retailer')" class="py-3 text-slate-500 border-b-2 border-transparent">
+                    <i class="fa-solid fa-store mr-1.5"></i> Partner Retailer
+                </button>
+            </div>
+            -->
+
+            <!-- Login Form Body -->
+            <div class="p-6 space-y-4">
+                <form id="loginForm" onsubmit="handleLoginSubmit(event)" class="space-y-4">
+                    <div>
+                        <label id="loginUserLabel" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Corporate Email ID</label>
+                        <input type="text" id="loginUsername" required placeholder="name@brandcompany.com" class="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-700">Password / OTP</label>
+                            <a href="#" class="text-[11px] text-brand-600 hover:underline">Send OTP</a>
+                        </div>
+                        <input type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-lg shadow transition-all flex items-center justify-center gap-2 text-sm mt-2">
+                        <span>Authenticate & Access Dashboard</span>
+                        <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i>
+                    </button>
+                </form>
+
+                <!-- Feedback Message Container -->
+                <div id="loginFeedback" class="hidden p-3 bg-brand-50 border border-brand-200 rounded-lg text-center text-xs text-brand-700">
+                    <i class="fa-solid fa-spinner animate-spin mr-1.5"></i> Authenticating with CareEco Core Portal...
+                </div>
+            </div>
+
+            <!-- Modal Footer Security Note -->
+            <div class="px-6 py-3 bg-slate-950 border-t border-slate-800 text-[10px] text-slate-500 flex justify-between items-center">
+                <span><i class="fa-solid fa-lock text-emerald-400 mr-1"></i> 256-Bit SSL Encrypted Session</span>
+                <span>Port 8443 / SSL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Interactivity Scripts -->
+    <script>
+        // Mobile Drawer Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('hidden');
+        });
+
+        // Modal Controllers
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('loginFeedback').classList.add('hidden');
+        }
+
+        // Login Role Tab Switcher
+        let currentRole = 'brand';
+        function switchLoginTab(role) {
+            currentRole = role;
+            const brandBtn = document.getElementById('tabBrandBtn');
+            const retailBtn = document.getElementById('tabRetailerBtn');
+            const userLabel = document.getElementById('loginUserLabel');
+            const userInput = document.getElementById('loginUsername');
+
+            if (role === 'brand') {
+                brandBtn.className = "py-3 text-brand-400 border-b-2 border-brand-500 bg-navy-900/50";
+                retailBtn.className = "py-3 text-slate-400 border-b-2 border-transparent hover:text-slate-200";
+                userLabel.innerText = "Corporate Email ID";
+                userInput.placeholder = "name@brandcompany.com";
+            } else {
+                retailBtn.className = "py-3 text-brand-400 border-b-2 border-brand-500 bg-navy-900/50";
+                brandBtn.className = "py-3 text-slate-400 border-b-2 border-transparent hover:text-slate-200";
+                userLabel.innerText = "Registered Retailer Mobile / GSTIN";
+                userInput.placeholder = "9876543210 or 07AAAAA0000A1Z5";
+            }
+        }
+
+        // Simulated Login Handler
+        function handleLoginSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('loginFeedback');
+            feedback.classList.remove('hidden');
+            
+            setTimeout(() => {
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Authentication Successful. Redirecting to ${currentRole === 'brand' ? 'Brand Enterprise Console' : 'Retailer Portal'}...`;
+                setTimeout(() => {
+                    closeLoginModal();
+                }, 1500);
+            }, 1200);
+        }
+
+        // Executive Margin Savings Calculator
+        const simGmvRange = document.getElementById('simGmvRange');
+        const simSpaceRange = document.getElementById('simSpaceRange');
+
+        const simGmvText = document.getElementById('simGmvText');
+        const simSpaceText = document.getElementById('simSpaceText');
+
+        const simSavingsDisplay = document.getElementById('simSavingsDisplay');
+        const simPercentDisplay = document.getElementById('simPercentDisplay');
+        const simCareEcoFeeText = document.getElementById('simCareEcoFeeText');
+        const simLegacyLossText = document.getElementById('simLegacyLossText');
+
+        function recalculateSavings() {
+            const gmv = parseInt(simGmvRange.value);
+            const space = parseInt(simSpaceRange.value);
+
+            // Legacy Distribution Channel Margin Loss (Average ~25% total across super stockists & agents)
+            const legacyLoss = Math.round(gmv * 0.25);
+
+            // CareEco D2R Fee Structure (e.g. 4.5% referral + storage + delivery allocation ~ 5.5% overall)
+            const careEcoReferral = gmv * 0.045;
+            const careEcoStorage = space * 22; // ₹22/sq.ft
+            const careEcoDelivery = gmv * 0.01;
+            const totalCareEcoFee = Math.round(careEcoReferral + careEcoStorage + careEcoDelivery);
+
+            // Total Retained Margin
+            const netSavings = legacyLoss - totalCareEcoFee;
+            const savingsPercent = ((netSavings / gmv) * 100).toFixed(1);
+
+            // Display Updates
+            simGmvText.innerText = '₹ ' + gmv.toLocaleString('en-IN');
+            simSpaceText.innerText = space + ' sq.ft';
+
+            simSavingsDisplay.innerText = '₹ ' + netSavings.toLocaleString('en-IN');
+            simPercentDisplay.innerText = savingsPercent + '%';
+            simCareEcoFeeText.innerText = '₹ ' + totalCareEcoFee.toLocaleString('en-IN');
+            simLegacyLossText.innerText = '₹ ' + legacyLoss.toLocaleString('en-IN');
+        }
+
+        simGmvRange.addEventListener('input', recalculateSavings);
+        simSpaceRange.addEventListener('input', recalculateSavings);
+        recalculateSavings();
+
+        // Form Submission
+        const brandInquiryForm = document.getElementById('brandInquiryForm');
+        const inquirySuccess = document.getElementById('inquirySuccess');
+
+        brandInquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            brandInquiryForm.classList.add('hidden');
+            inquirySuccess.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
